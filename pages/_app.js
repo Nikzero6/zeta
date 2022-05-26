@@ -1,7 +1,8 @@
+import "../styles/global.css";
 import Head from "next/head";
-import SideNav from "../components/Layout/SideNav";
-import List from "../components/List/List";
-export default function Home() {
+
+// This default export is required in a new `pages/_app.js` file.
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -9,9 +10,9 @@ export default function Home() {
         <meta name="description" content="Zeta" />
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      <SideNav>
-        <List />
-      </SideNav>
+      <>
+        <Component {...pageProps} />
+      </>
     </>
   );
 }
